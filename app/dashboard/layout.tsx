@@ -1,5 +1,5 @@
-import './globals.css'
 import { Poppins } from 'next/font/google'
+import Sidebar from '../components/Sidebar'
 
 const poppins = Poppins({
   weight: ['400', '600', '700'],
@@ -17,7 +17,16 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={poppins.className}>{children}</body>
+      <body className={poppins.className}>
+        <div>
+          <div>
+            <Sidebar />
+          </div>
+          <div className='ml-80'>
+            {children}
+          </div>
+        </div>
+      </body>
     </html>
   )
 }
