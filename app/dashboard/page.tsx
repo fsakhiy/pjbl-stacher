@@ -4,6 +4,13 @@ import prisma from "../components/Prisma";
 export default async function Dashboard() {
   const data = await prisma.staff.findMany()
   const totalData = await prisma.staff.count()
+
+  const fetchedData = await fetch("/api/staff")
+
+  async function getData() {
+    return await prisma.staff.findMany()
+  }
+
   return (
     <div className="h-min-screen w-auto flex bg-white">
       <div className="px-5 py-10 flex flex-col gap-3 mx-auto">
@@ -17,12 +24,14 @@ export default async function Dashboard() {
           <Card key='' nip={staff.nip} name={staff.name} photos={staff.photos} jabatan="Guru" jenisKelamin="Perempuan" />
           ))} */}
           {
-            data.map((staff) => (
+            (await getData()).map((staff) => (
               <Card key={staff.id} id={staff.id} nip={staff.nip} name={staff.nama} photos={staff.photo} jabatan={staff.jabatan} jenisKelamin={staff.jenisKelamin} />
             ))
           }
+
         </div>
       </div>
+      {fetchedData.json()}
     </div>
 
   )
