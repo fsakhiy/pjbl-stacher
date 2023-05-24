@@ -1,14 +1,17 @@
 import { Suspense } from "react";
-import Card from "../components/Card";
-import prisma from "../components/Prisma";
+// import Card from "../components/Card";
+import prisma from "@/app/components/Prisma";
+import Card from "@/app/components/Card";
 
 
-export default async function Dashboard() {
+export default async function DashboardAlt() {
   const data = await prisma.staff.findMany()
   const totalData = await prisma.staff.count()
 
   async function getData() {
-    return await prisma.staff.findMany()
+    // return await prisma.staff.findMany()
+
+    return (await fetch("http://localhost:3000/api/staff")).json()
   }
 
   return (
@@ -25,7 +28,7 @@ export default async function Dashboard() {
             <Card key='' nip={staff.nip} name={staff.name} photos={staff.photos} jabatan="Guru" jenisKelamin="Perempuan" />
             ))} */}
             {
-              (await getData()).map((staff) => (
+              (await getData()).map((staff: any) => (
                 <Card key={staff.id} id={staff.id} nip={staff.nip} name={staff.nama} photos={staff.photo} jabatan={staff.jabatan} jenisKelamin={staff.jenisKelamin} />
               ))
             }
