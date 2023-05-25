@@ -53,7 +53,7 @@
 //   )
 // }
 
-import prisma from "@/app/components/Prisma";
+import {prisma} from "@/app/components/Prisma";
 import { redirect } from "next/navigation";
 
 export default async function NewData() {
