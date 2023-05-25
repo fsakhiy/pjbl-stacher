@@ -1,3 +1,4 @@
+"use server"
 import Image from "next/image";
 import {prisma} from "@/app/components/Prisma";
 import Link from "next/link";
@@ -7,7 +8,7 @@ const Staff = async ({
   }: {
     params: { id: string };
   }) => {   
-
+    
     const staff = await prisma.staff.findUnique({where: {id: params.id}})
 
     return (

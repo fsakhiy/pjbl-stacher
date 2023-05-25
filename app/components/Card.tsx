@@ -32,11 +32,13 @@ export default function Card({name, nip, photos, jabatan, jenisKelamin, id}: inf
             <tbody>
               <tr>
                 <td>NIP</td>
-                <td>: {nip}</td>
+                <td>:</td>
+                <td>{nip}</td>
               </tr>
               <tr>
                 <td>Kelamin&nbsp;</td>
-                <td>: {jenisKelamin}</td>
+                <td>:</td>
+                <td>{jenisKelamin}</td>
               </tr>
             </tbody>
           </table>
