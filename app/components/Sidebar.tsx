@@ -2,8 +2,8 @@ import PageSelector from "./PageSelector"
 
 export default function Sidebar() {
   return(
-    <div className="py-10 max-w-xs w-full border-2 border-r-neutral-300 flex flex-col gap-10 mx-auto h-screen fixed">
-      <div className="font-bold text-5xl text-sky-600 text-center">
+    <div className="py-7 xl:py-10 w-64 xl:max-w-xs xl:w-full border-2 border-r-neutral-300 flex flex-col gap-5 xl:gap-10 mx-auto h-screen fixed">
+      <div className="font-bold text-3xl xl:text-5xl text-sky-600 text-center">
         Stacher
       </div>
       <div className="flex flex-col gap-3">

@@ -1,6 +1,5 @@
-import { Suspense } from "react";
 import Card from "../components/Card";
-import prisma from "../components/Prisma";
+import {prisma} from "../components/Prisma";
 
 
 export default async function Dashboard() {
@@ -13,15 +12,14 @@ export default async function Dashboard() {
   }
 
   return (
-    <Suspense>
       <div className="h-min-screen w-auto flex bg-white">
         <div className="px-5 py-10 flex flex-col gap-3 mx-auto">
           {/* <p className="font-bold text-3xl">Dashboard<p className="font-normal text-base"> - {totalData} found</p></p> */}
           <div className="flex flex-row items-end gap-5">
-            <div className="font-bold text-3xl">Dashboard</div>
+            <div className="font-bold text-2xl 2xl:text-3xl">Dashboard</div>
             <div>{totalData} found</div>
           </div>
-          <div className="rounded-t-xl bg-neutral-200 p-10 grid grid-cols-1 xl:grid-cols-2 2xl:grid-cols-3 gap-10 w-full">
+          <div className="rounded-t-xl bg-neutral-200 p-5 2xl:p-10 grid grid-cols-1 lg:grid-cols-2 2xl:grid-cols-3 gap-5 2xl:gap-10 w-full">
             {/* {dummyData.map((staff) => (
             <Card key='' nip={staff.nip} name={staff.name} photos={staff.photos} jabatan="Guru" jenisKelamin="Perempuan" />
             ))} */}
@@ -34,8 +32,5 @@ export default async function Dashboard() {
           </div>
         </div>
       </div>
-    </Suspense>
-    
-
   )
 }

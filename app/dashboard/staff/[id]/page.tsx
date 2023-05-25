@@ -1,5 +1,5 @@
 import Image from "next/image";
-import prisma from "@/app/components/Prisma";
+import {prisma} from "@/app/components/Prisma";
 import Link from "next/link";
 
 const Staff = async ({
