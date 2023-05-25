@@ -8,6 +8,7 @@ export default async function Dashboard() {
   const totalData = await prisma.staff.count()
 
   async function getData() {
+    "use server"
     return await prisma.staff.findMany()
   }
 
