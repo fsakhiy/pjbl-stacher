@@ -19,7 +19,7 @@ const Staff = async ({
           </div>
           <div className="bg-neutral-200 rounded-xl pt-5 p-10 flex flex-col gap-7">
             <div className="mx-auto border-2">
-              <Image src={`${staff?.photo}`} alt={`${staff?.nama}`} width={120} height={120} ></Image>
+              <Image src={`/${staff?.photo}`} alt={`${staff?.nama}`} width={120} height={120} ></Image>
             </div>
             <div>
               <table className="border-separate border-spacing-3">
@@ -33,6 +33,11 @@ const Staff = async ({
                     <td>NIP</td>
                     <td>:</td>
                     <td>{staff?.nip}</td>
+                  </tr>
+                  <tr>
+                    <td>Nomor Telpon</td>
+                    <td>:</td>
+                    <td>{staff?.nomor}</td>
                   </tr>
                   <tr>
                     <td>Jenis Kelamin</td>

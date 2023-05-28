@@ -15,7 +15,7 @@ export default function Card({name, nip, photos, jabatan, jenisKelamin, id}: inf
       <div className="flex flex-row gap-5 rounded-md p-5 bg-white w-auto">
       <div className="flex flex-col items-center justify-center gap-3 w-40">
         <div>
-          <Image src={`${photos}`} alt={name} width={80} height={80} ></Image>
+          <Image src={`/${photos}`} alt={name} width={80} height={80} ></Image>
         </div>
         <div>
           <div className="text-center font-bold">{name}</div>
