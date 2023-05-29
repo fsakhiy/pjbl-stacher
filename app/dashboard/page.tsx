@@ -1,6 +1,6 @@
 import Card from "../components/Card";
 import {prisma} from "../components/Prisma";
-
+import Image from "next/image";
 
 export default async function Dashboard() {
   const data = await prisma.staff.findMany()

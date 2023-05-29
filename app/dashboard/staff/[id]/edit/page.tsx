@@ -33,7 +33,8 @@ const EditStaff = async ({
       kawin: formData.get("kawin")!.toString() == "true" ? true : false,
       kota: formData.get("tempatlahir")!.toString(),
       pangkat: formData.get("pangkat")!.toString(),
-      photo: formData.get("photo")!.toString(),
+      // photo: formData.get("photo")!.toString(),
+
       pegawaiTetap: formData.get("pegawaitetap")!.toString() == "true" ? true : false,
       pendidikan: formData.get("pendidikan")!.toString()
     }})
@@ -138,10 +139,10 @@ const EditStaff = async ({
               <td className="font-semibold text-lg">Pendidikan</td>
               <td><input className="w-full p-2 border rounded-md" type="text" name="pendidikan" id="pendidikan" defaultValue={initialStaff?.pendidikan} /></td>
             </tr>
-            <tr>
+            {/* <tr>
               <td className="font-semibold text-lg">Photo</td>
               <td><input className="w-full p-2 border rounded-md" type="text" name="photo" id="photo" defaultValue={initialStaff?.photo} /></td>
-            </tr>
+            </tr> */}
 
           </tbody>
         </table>

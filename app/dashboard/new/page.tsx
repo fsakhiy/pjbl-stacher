@@ -19,7 +19,12 @@ export default async function NewData() {
       kawin: formData.get("kawin")!.toString() == "true" ? true : false,
       kota: formData.get("tempatlahir")!.toString(),
       pangkat: formData.get("pangkat")!.toString(),
-      photo: formData.get("photo")!.toString(),
+
+      
+      // ----- photo is currently not able to be customized by the user
+      // photo: formData.get("photo")!.toString(),
+      photo: "placeholder.png",
+
       pegawaiTetap: formData.get("pegawaitetap")!.toString() == "true" ? true : false,
       pendidikan: formData.get("pendidikan")!.toString()
     }})
@@ -38,26 +43,26 @@ export default async function NewData() {
             <tr>
               {/* <td><label className="font-semibold" htmlFor="nama">Nama</label></td> */}
               <td className="font-semibold text-lg">Nama</td>
-              <td><input className="w-full p-2 boder rounded-md" type="text" name="nama" id="nama" /></td>
+              <td><input required className="w-full p-2 boder rounded-md" type="text" name="nama" id="nama" /></td>
             </tr>
             <tr>
               {/* <td><label className="font-semibold" htmlFor="nomor">Nomor Telpon</label></td> */}
               <td className="font-semibold text-lg">Nomor Telpon</td>
-              <td><input className="w-full p-2 border rounded-md" type="tel" name="nomor" id="nomor" /></td>
+              <td><input required className="w-full p-2 border rounded-md" type="tel" name="nomor" id="nomor" /></td>
             </tr>
             <tr>
               <td className="font-semibold text-lg">NIP</td>
-              <td><input className="w-full p-2 border rounded-md" type="number" name="nip" id="nip" /></td>
+              <td><input required className="w-full p-2 border rounded-md" type="number" name="nip" id="nip" /></td>
             </tr>
             <tr>
               <td className="font-semibold text-lg">Jenis Kelamin</td>
               {/* <td><input className="w-full p-2 border rounded-md" type="number" name="nip" id="nip" /></td> */}
-              <td><select className="w-full p-2 rounded-md" name="kelamin" id="kelamin"><option value="Laki laki">Laki Laki</option><option value="Perempuan">Perempuan</option></select></td>
+              <td><select required className="w-full p-2 rounded-md" name="kelamin" id="kelamin"><option value="Laki laki">Laki Laki</option><option value="Perempuan">Perempuan</option></select></td>
             </tr>
             <tr>
               <td className="font-semibold text-lg">Agama</td>
               <td>
-                <select className="w-full p-2 rounded-md" name="agama" id="agama" >
+                <select required className="w-full p-2 rounded-md" name="agama" id="agama" >
                 <option value="Islam">Islam</option>
                 <option value="Kristen">Kristen</option>
                 <option value="Protestan">Protestan</option>
@@ -72,52 +77,52 @@ export default async function NewData() {
               <td className="font-semibold text-lg">Status Kawin</td>
               {/* <td><input className="w-full p-2 border rounded-md" type="number" name="nip" id="nip" /></td> */}
               <td>
-                <select className="w-full p-2 rounded-md" name="kawin" id="kawin" >
+                <select required className="w-full p-2 rounded-md" name="kawin" id="kawin" >
                 <option value="true">Sudah Kawin</option>
                 <option value="false">Belum Kawin</option></select>
               </td>
             </tr>
             <tr>
               <td className="font-semibold text-lg">Alamat</td>
-              <td><input className="w-full p-2 border rounded-md" type="text" name="alamat" id="alamat" /></td>
+              <td><input required className="w-full p-2 border rounded-md" type="text" name="alamat" id="alamat" /></td>
             </tr>
             <tr>
               <td className="font-semibold text-lg">Tanggal Lahir</td>
-              <td><input className="w-full p-2 border rounded-md" type="date" name="lahir" id="lahir" /></td>
+              <td><input required className="w-full p-2 border rounded-md" type="date" name="lahir" id="lahir" /></td>
             </tr>
             <tr>
               <td className="font-semibold text-lg">Tempat Lahir</td>
-              <td><input className="w-full p-2 border rounded-md" type="text" name="tempatlahir" id="tempatlahir" /></td>
+              <td><input required className="w-full p-2 border rounded-md" type="text" name="tempatlahir" id="tempatlahir" /></td>
             </tr>
             <tr>
               <td className="font-semibold text-lg">Jabatan</td>
-              <td><input className="w-full p-2 border rounded-md" type="text" name="jabatan" id="jabatan" /></td>
+              <td><input required className="w-full p-2 border rounded-md" type="text" name="jabatan" id="jabatan" /></td>
             </tr>
             <tr>
               <td className="font-semibold text-lg">Golongan</td>
-              <td><input className="w-full p-2 border rounded-md" type="text" name="golongan" id="golongan" /></td>
+              <td><input required className="w-full p-2 border rounded-md" type="text" name="golongan" id="golongan" /></td>
             </tr>
             <tr>
               <td className="font-semibold text-lg">Pegawai Tetap</td>
               {/* <td><input className="w-full p-2 border rounded-md" type="number" name="nip" id="nip" /></td> */}
               <td>
-                <select className="w-full p-2 rounded-md" name="pegawaitetap" id="pegawaitetap" >
+                <select required className="w-full p-2 rounded-md" name="pegawaitetap" id="pegawaitetap" >
                 <option value="true">Pegawai tetap</option>
                 <option value="false">Pegawai tidak tetap</option></select>
               </td>
             </tr>
             <tr>
               <td className="font-semibold text-lg">Pangkat</td>
-              <td><input className="w-full p-2 border rounded-md" type="text" name="pangkat" id="pangkat" /></td>
+              <td><input required className="w-full p-2 border rounded-md" type="text" name="pangkat" id="pangkat" /></td>
             </tr>
             <tr>
               <td className="font-semibold text-lg">Pendidikan</td>
-              <td><input className="w-full p-2 border rounded-md" type="text" name="pendidikan" id="pendidikan" /></td>
+              <td><input required className="w-full p-2 border rounded-md" type="text" name="pendidikan" id="pendidikan" /></td>
             </tr>
-            <tr>
+            {/* <tr>
               <td className="font-semibold text-lg">Photo</td>
               <td><input className="w-full p-2 border rounded-md" type="text" name="photo" id="photo" /></td>
-            </tr>
+            </tr> */}
 
           </tbody>
         </table>
