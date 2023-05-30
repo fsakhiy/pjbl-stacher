@@ -3,6 +3,7 @@ import Link from "next/link";
 import {redirect} from "next/navigation"
 import {signIn} from "next-auth/react"
 import React,{ useRef } from "react";
+import toast, {Toaster} from "react-hot-toast";
 
 export default async function Login() {
 
@@ -10,12 +11,14 @@ export default async function Login() {
   const password = useRef("")
   
   const login = async () => {
-    const result = await signIn("credentials", {
-      email: email.current,
-      password: password.current,
-      redirect: true,
-      callbackUrl: "/dashboard"
-    }) 
+    // const result = await signIn("credentials", {
+    //   email: email.current,
+    //   password: password.current,
+    //   redirect: true,
+    //   callbackUrl: "/dashboard",
+    // }) 
+
+    toast(`${email.current.toString()} - ${password.current.toString()}`)
   }
 
   return (
@@ -40,6 +43,7 @@ export default async function Login() {
         <div className="flex flex-col gap-16 w-full">
           <div className="font-bold text-center text-4xl">
             Login
+            <Toaster />
           </div>
           <div className="flex flex-col gap-5">
             <input required type="email" name="email" id="email" onChange={(e) => (email.current == e.target.value)} placeholder="email" className="p-4 rounded-md border"/>
