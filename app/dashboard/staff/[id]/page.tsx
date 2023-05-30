@@ -2,6 +2,7 @@
 import Image from "next/image";
 import {prisma} from "@/app/components/Prisma";
 import Link from "next/link";
+import { useSession } from "next-auth/react"
 
 const Staff = async ({
     params,

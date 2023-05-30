@@ -2,16 +2,22 @@ import Card from "../components/Card";
 import {prisma} from "../components/Prisma";
 import Image from "next/image";
 
+// import {getServerSession} from "next-auth/next"
+// import { authOptions } from "../api/auth/[...nextauth]/route";
+
 export default async function Dashboard() {
   const data = await prisma.staff.findMany()
   const totalData = await prisma.staff.count()
+
+  // const session = await getServerSession(authOptions)
 
   async function getData() {
     "use server"
     return await prisma.staff.findMany()
   }
 
-  return (
+  // if(session != null) {
+    return (
       <div className="h-min-screen w-auto flex bg-white">
         <div className="px-5 py-10 flex flex-col gap-3 mx-auto">
           {/* <p className="font-bold text-3xl">Dashboard<p className="font-normal text-base"> - {totalData} found</p></p> */}
@@ -33,4 +39,7 @@ export default async function Dashboard() {
         </div>
       </div>
   )
+  // }
+  // else return <div>You need to sign in first</div>
+  
 }

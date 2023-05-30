@@ -1,4 +1,5 @@
 import PageSelector from "./PageSelector"
+import SigninButton from "./SigninButton"
 
 export default function Sidebar() {
   return(
@@ -9,6 +10,9 @@ export default function Sidebar() {
       <div className="flex flex-col gap-3">
         <PageSelector page="Home"/>
         <PageSelector page="New Data" />
+      </div>
+      <div className="fixed bottom-5">
+        <SigninButton />
       </div>
     </div>
   )

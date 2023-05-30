@@ -22,7 +22,6 @@ export default async function Signup() {
         password: hashedPassword
       }})
 
-      
       redirect("/")
     }
   }
