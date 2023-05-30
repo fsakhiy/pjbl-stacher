@@ -46,7 +46,7 @@ export default async function Login() {
             <Toaster />
           </div>
           <div className="flex flex-col gap-5">
-            <input required type="email" name="email" id="email" onChange={(e) => (email.current == e.target.value)} placeholder="email" className="p-4 rounded-md border"/>
+            <input required ref={email.current} type="email" name="email" id="email" onChange={(e) => (email.current == e.target.value)} placeholder="email" className="p-4 rounded-md border"/>
             <input required type="password" name="password" id="password" onChange={(e) => (password.current == e.target.value)} placeholder="password" className="p-4 rounded-md border"/>
             <p className="text-end text-blue-800 underline hover:text-blue-400 font-semibold"><Link href='#'>forgot password?</Link></p>
           </div>
