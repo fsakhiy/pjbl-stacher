@@ -18,7 +18,7 @@ export default async function Login() {
     //   callbackUrl: "/dashboard",
     // }) 
 
-    toast(`${email.current.toString()} - ${password.current.toString()}`)
+    toast(`${email.current} - ${password.current}`)
   }
 
   return (
