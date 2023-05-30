@@ -10,8 +10,9 @@ export default function Sidebar() {
       <div className="flex flex-col gap-3">
         <PageSelector page="Home"/>
         <PageSelector page="New Data" />
+        {/* <SigninButton /> */}
       </div>
-      <div className="fixed bottom-5">
+      <div className="align-bottom">
         <SigninButton />
       </div>
     </div>
