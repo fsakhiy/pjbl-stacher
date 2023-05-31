@@ -16,7 +16,7 @@ const SigninButton = () => {
   }
   return <div className="flex w-auto mx-5 gap-3">
     <button className="p-3 xl:p-5 flex w-full rounded-lg bg-sky-900 font-semibold text-white" onClick={() => signIn()}>Sign In</button>
-    <button className="p-3 xl:p-5 flex w-full rounded-lg bg-teal-800 font-semibold text-white" ><Link href='/auth/signup'>Sing up</Link></button>
+    <button className="p-3 xl:p-5 flex w-full rounded-lg bg-teal-800 font-semibold text-white" ><Link href='/auth/signup'>Sign Up</Link></button>
   </div>
 }
 

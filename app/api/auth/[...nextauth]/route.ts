@@ -25,13 +25,13 @@ export const authOptions: AuthOptions = {
         })
 
         if (!user || !user.password ) {
-          throw new Error('invalid credentials')
+          throw new Error('credentials not found')
         }
 
         const isCorrectPassword = await bcrypt.compare(credentials.password, user.password)
 
         if(!isCorrectPassword) {
-          throw new Error('invalid credentials')
+          throw new Error('invalid password')
         }
         
         return user
@@ -43,9 +43,9 @@ export const authOptions: AuthOptions = {
     maxAge: 864000
   },
   secret: process.env.NEXTAUTH_SECRET, 
-  // pages: {
-  //   signIn: '/auth/login',
-  // }
+  pages: {
+    signIn: '/auth/login',
+  }
 }
 
 const handler = NextAuth(authOptions)
