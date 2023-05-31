@@ -15,6 +15,7 @@ const Login: React.FC = () => {
 
   const login = async () => {
     // toast(`${email} - ${password}`)
+    const loading = toast.loading('signin you in')
     const res = await signIn("credentials", {
       email: email,
       password: password,
@@ -22,8 +23,11 @@ const Login: React.FC = () => {
     })
 
     if(res!.error) {
-      toast(res!.error, {icon: '❌'})
-    } else router.push('/dashboard')
+      toast.error(res!.error, {icon: '❌', id: loading})
+    } else {
+      toast.success('signed in!', {icon: '✅', id: loading})
+      router.push('/dashboard')
+    }
   }
 
   const handlePasswordChange = (e: ChangeEvent<HTMLInputElement>) => {
