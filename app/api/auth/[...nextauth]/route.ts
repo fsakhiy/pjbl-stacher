@@ -43,9 +43,9 @@ export const authOptions: AuthOptions = {
     maxAge: 864000
   },
   secret: process.env.NEXTAUTH_SECRET, 
-  pages: {
-    signIn: '/auth/login',
-  }
+  // pages: {
+  //   signIn: '/auth/login',
+  // }
 }
 
 const handler = NextAuth(authOptions)

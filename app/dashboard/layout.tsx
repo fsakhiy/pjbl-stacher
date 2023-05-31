@@ -7,6 +7,7 @@ import { authOptions } from '../api/auth/[...nextauth]/route'
 import SigninButton from '../components/SigninButton'
 import { redirect }from 'next/navigation'
 import Link from 'next/link'
+import MobileNavbar from '../components/MobileNavBar'
 
 const poppins = Poppins({
   weight: ['400', '600', '700'],
@@ -33,6 +34,7 @@ export default async function RootLayout({
             <div className='hidden md:block'>
               <Sidebar />
             </div>
+            
             <div className='md:ml-64 xl:ml-80'>
               {/* <div className='flex mx-auto flex-col gap-5 md:hidden'>
                 <div>Stacher</div>
@@ -40,17 +42,21 @@ export default async function RootLayout({
                 <PageSelector page='New Data'/>
               </div> */}
   
-              <div className='flex flex-col md:hidden'>
+              {/* <div className='flex flex-col md:hidden border-b pb-5'>
                 <div className='p-5 text-4xl text-center font-bold text-sky-600'>Stacher</div>
-                <div className='grid grid-cols-2 md:hidden'>
+                <div className='flex flex-col gap-4 md:hidden'>
   
                   <PageSelector page='Home'/>
                   <PageSelector page='New Data'/>
+                  <SigninButton />
                 </div>
+              </div> */}
+            
+              <MobileNavbar />
+              <div className='pt-20 md:pt-0'>
+                {children}
               </div>
-  
-  
-              {children}
+              
             </div>
           </div>
           </Providers>
@@ -76,18 +82,24 @@ export default async function RootLayout({
                 <PageSelector page='New Data'/>
               </div> */}
   
-              <div className='flex flex-col md:hidden'>
+              {/* <div className='flex flex-col md:hidden border-b pb-5'>
                 <div className='p-5 text-4xl text-center font-bold text-sky-600'>Stacher</div>
-                <div className='grid grid-cols-2 md:hidden'>
+                <div className='flex flex-col gap-4 md:hidden'>
   
                   <PageSelector page='Home'/>
                   <PageSelector page='New Data'/>
+                  <SigninButton />
                 </div>
-              </div>
-  
+              </div> */}
+              {/* <div className='fixed top-0 md:hidden flex w-full p-3'>
+                <button className='p-3 bg-sky-700 rounded-lg'>Menu</button>
+              </div> */}
+
+              <MobileNavbar />
 
               <div className='flex justify-center items-center mx-auto h-screen'>
-                Please login before accessing this page or &#160;<Link href='/auth/signup' className='text-center font-semibold text-sky-700 hover:text-sky-400 underline'>Sign up</Link>
+                {/* Please login before accessing this page or &#160;<Link href='/auth/signup' className='text-center font-semibold text-sky-700 hover:text-sky-400 underline'>Sign up</Link> */}
+                Please login before accessing this page
               </div>
               {/* {children} */}
             </div>

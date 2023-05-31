@@ -1,6 +1,7 @@
 'use client'
 import React from "react";
 import { signOut, signIn, useSession} from "next-auth/react"
+import { redirect } from "next/navigation";
 
 const SigninButton = () => {
   const {data:session} = useSession()
@@ -12,8 +13,9 @@ const SigninButton = () => {
       </div>
     )
   }
-  return <div>
-    <button className="p-5 flex w-auto mx-5 rounded-lg bg-sky-900 font-semibold text-white" onClick={() => signIn()}>Sign In</button>
+  return <div className="flex w-auto mx-5 gap-3">
+    <button className="p-3 xl:p-5 flex w-full rounded-lg bg-sky-900 font-semibold text-white" onClick={() => signIn()}>Sign In</button>
+    <button className="p-3 xl:p-5 flex w-full rounded-lg bg-teal-800 font-semibold text-white" onClick={() => redirect('/auth/signup')}>Sign Up</button>
   </div>
 }
 
